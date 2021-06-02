@@ -1,5 +1,6 @@
 // Your code here
-
+//regex
+let textReg = /[a-zA-Z]+/g;
 eliminar();
 
 let inpout = document.querySelector("#addToDo");
@@ -9,7 +10,7 @@ inpout.addEventListener("keypress", function(e) {
 		let ul = document.querySelector("ul");
 		let newli = document.createElement("LI");
 		let textoInput = e.target.value;
-		if (textoInput !== "") {
+		if (textoInput !== "" && textReg.test(textoInput)) {
 			newli.innerHTML = `<span><i class="fa fa-trash"></i></span> ${textoInput}`;
 			ul.appendChild(newli);
 			e.target.value = "";
@@ -25,8 +26,8 @@ function eliminar() {
 	let spans = document.querySelectorAll("span");
 	for (let span of spans) {
 		span.addEventListener("click", function() {
-			let padre = span.parentNode.parentNode;
-			padre.removeChild(span.parentNode);
+			 span.parentNode.remove();
+			// padre.removeChild(span.parentNode);
 		});
 	}
 }
