@@ -82,7 +82,7 @@ span {
 	display: inline-block;
 	color: white;
 	opacity: 0;
-	transition: 0.2s linear;
+	transition: 0.1s linear;
 }
 
 li:hover span {
